@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import FeedbackOption from './FeedbackOption';
 import s from './FeedbackOptions.module.css';
 
-export default function FeedbackOptions({ options, onFeedbackleave }) {
+export default function FeedbackOptions({ options, onLeaveFeedback }) {
   return (
     <ul className={s.list}>
       {Object.keys(options).map(key => {
@@ -9,10 +10,19 @@ export default function FeedbackOptions({ options, onFeedbackleave }) {
           <FeedbackOption
             key={key}
             name={key}
-            onFeedbackLeave={onFeedbackleave}
+            onLeaveFeedback={onLeaveFeedback}
           />
         );
       })}
     </ul>
   );
 }
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.shape({
+    good: PropTypes.number,
+    neutral: PropTypes.number,
+    bad: PropTypes.number,
+  }).isRequired,
+  onLeaveFeedback: PropTypes.func.isRequired,
+};

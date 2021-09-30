@@ -36,7 +36,7 @@ export default class App extends Component {
         <Section title={'Please leave feedback'}>
           <FeedbackOptions
             options={this.state}
-            onFeedbackleave={this.handleAddFeedback}
+            onLeaveFeedback={this.handleAddFeedback}
           />
         </Section>
         <Section title={'Statistics'}>
