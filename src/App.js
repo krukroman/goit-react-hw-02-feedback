@@ -19,11 +19,11 @@ export default class App extends Component {
 
   countPositivePercentage() {
     const { good } = this.state;
-    return Math.round((good / this.countTotal()) * 100);
+    return Math.round((good / this.countTotal()) * 100) + '%';
   }
 
   handleAddFeedback = e => {
-    const stateName = e.target.innerText.toLowerCase();
+    const stateName = e.target.value.toLowerCase();
     this.setState(prevState => ({
       [stateName]: prevState[stateName] + 1,
     }));
