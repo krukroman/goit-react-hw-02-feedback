@@ -7,7 +7,7 @@ export default function FeedbackOption({ name, onLeaveFeedback }) {
       <button
         type="button"
         className={s.button}
-        onClick={onLeaveFeedback}
+        onClick={() => onLeaveFeedback(name)}
         value={name}
       >
         {name.charAt(0).toUpperCase() + name.slice(1)}

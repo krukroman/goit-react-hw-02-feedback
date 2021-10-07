@@ -10,7 +10,7 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
           <FeedbackOption
             key={key}
             name={key}
-            onLeaveFeedback={onLeaveFeedback}
+            onLeaveFeedback={() => onLeaveFeedback(key)}
           />
         );
       })}

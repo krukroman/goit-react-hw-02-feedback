@@ -22,8 +22,8 @@ export default class App extends Component {
     return Math.round((good / this.countTotal()) * 100) + '%';
   }
 
-  handleAddFeedback = e => {
-    const stateName = e.target.value.toLowerCase();
+  handleAddFeedback = feedbackValue => {
+    const stateName = feedbackValue.toLowerCase();
     this.setState(prevState => ({
       [stateName]: prevState[stateName] + 1,
     }));
@@ -33,13 +33,13 @@ export default class App extends Component {
     const { good, neutral, bad } = this.state;
     return (
       <div className={s.container}>
-        <Section title={'Please leave feedback'}>
+        <Section title="Please leave feedback">
           <FeedbackOptions
             options={this.state}
             onLeaveFeedback={this.handleAddFeedback}
           />
         </Section>
-        <Section title={'Statistics'}>
+        <Section title="Statistics">
           {this.countTotal() !== 0 ? (
             <Statistics
               good={good}
