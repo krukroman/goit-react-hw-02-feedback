@@ -19,7 +19,7 @@ export default class App extends Component {
 
   countPositivePercentage() {
     const { good } = this.state;
-    return Math.round((good / this.countTotal()) * 100) + '%';
+    return Math.round((good / this.countTotal()) * 100);
   }
 
   handleAddFeedback = feedbackValue => {

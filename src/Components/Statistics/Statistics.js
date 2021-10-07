@@ -37,7 +37,7 @@ export default function Statistics({
       <li className={s.item}>
         <p className={s.text}>
           Positive feedback:
-          <span className={s.value}>{positivePercentage}</span>
+          <span className={s.value}>{positivePercentage}%</span>
         </p>
       </li>
     </ul>
@@ -49,5 +49,5 @@ Statistics.propTypes = {
   neutral: PropTypes.number.isRequired,
   bad: PropTypes.number.isRequired,
   total: PropTypes.number.isRequired,
-  positivePercentage: PropTypes.string.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
